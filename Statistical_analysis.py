@@ -12,6 +12,7 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from statsmodels.stats.power import TTestIndPower
 
 path = Path()
 
@@ -98,7 +99,7 @@ mean_generation_across_days['Net Generation (MW) from Renewable Energy Source (A
 mean_generation_across_days = mean_generation_across_days.loc[:, ['Net Generation (MW) from Renewable Energy Source (Adjusted)']]
 display(mean_generation_across_days.head())
 
-from statsmodels.stats.power import TTestIndPower
+
 
 # Parameters
 effect_size = 1.2
