@@ -321,7 +321,7 @@ This is the Mann-Whitney U test that we had to conduct based on the fact that th
 from scipy.stats import mannwhitneyu
 
 # Perform the Mann-Whitney U test
-statistic, p_value_mw = mannwhitneyu(Group_A['Net Generation (MW) from Renewable Energy Source (Adjusted)'].dropna(), Group_B['Net Generation (MW) from Renewable Energy Source (Adjusted)'].dropna(), alternative='two-sided')
+statistic, p_value_mw = mannwhitneyu(Group_A['Net Generation (MW) from Renewable Energy Source (Adjusted)'].dropna(), Group_B['Net Generation (MW) from Renewable Energy Source (Adjusted)'].dropna(), alternative='greater')
 
 print(f"Mann-Whitney U statistic: {statistic:.4f}")
 print(f"Mann-Whitney U p-value: {p_value_mw:.4f}")
@@ -330,7 +330,7 @@ print(f"Mann-Whitney U p-value: {p_value_mw:.4f}")
 
 Here are the results:
 - **Mann-Whitney U statistic:** This is the test statistic. It represents the number of times a value from Group A is greater than a value from Group B (or vice-versa). Our calculated statistic is 458.0000.
-- **Mann-Whitney U p-value:** This is the probability of observing a test statistic as extreme as, or more extreme than, the one calculated from the data, assuming the null hypothesis is true. The null hypothesis for the Mann-Whitney U test is that the distributions of the two groups are the same. Our calculated p-value is 0.0002.
+- **Mann-Whitney U p-value:** This is the probability of observing a test statistic as extreme as, or more extreme than, the one calculated from the data, assuming the null hypothesis is true. The null hypothesis for the Mann-Whitney U test is that the distributions of the two groups are the same. Our calculated p-value is 0.0001.
 
 Interpretation:
 With a p-value of 0.0002, which is much less than our chosen significance level of 0.05, we reject the null hypothesis. This means there is a statistically significant difference in the distribution of renewable energy generation between Balancing Authorities with known Microsoft Azure Data Centers (Group A) and those without known Microsoft Azure Data Centers (Group B).
